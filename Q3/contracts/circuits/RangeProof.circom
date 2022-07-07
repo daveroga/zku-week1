@@ -12,4 +12,13 @@ template RangeProof(n) {
     component high = GreaterEqThan(n);
 
     // [assignment] insert your code here
+    // in should be higher or equal than lower bound 
+    high.in[0] <== in;
+    high.in[1] <== range[0];
+    
+    // in should be lower or equal than upper bound
+    low.in[0] <== in;
+    low.in[1] <== range[1];
+
+    out <== low.out * high.out; // both outs should be true (1) to be in the range  
 }
